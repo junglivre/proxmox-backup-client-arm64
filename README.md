@@ -1,4 +1,4 @@
-﻿# proxmox-backup-client-arm64
+# proxmox-backup-client-arm64
 
 English | [Português Brasileiro](./README.pt-BR.md)
 
@@ -13,14 +13,20 @@ And you shall also get prebuilt variants per distro, with clear runtime deps. I 
 This repo also includes ARM64 builds based on `proxmoxbackupclient_go`.
 Jump to [Go Client (ARM64 builds in this repo)](#go-client-arm64-builds-in-this-repo).
 
+Or download them directly:
+
+- [directorybackup](https://github.com/junglivre/proxmox-backup-client-arm64/raw/master/proxmoxbackupclient_go/directorybackup)
+- [machinebackup](https://github.com/junglivre/proxmox-backup-client-arm64/raw/master/proxmoxbackupclient_go/machinebackup)
+- [nbd](https://github.com/junglivre/proxmox-backup-client-arm64/raw/master/proxmoxbackupclient_go/nbd)
+
 ## Available Distros
 
-- Debian 11: [proxmox-backup-client_arm64-debian11](./proxmox-backup-client_arm64-debian11)
-- Debian 12: [proxmox-backup-client_arm64-debian12](./proxmox-backup-client_arm64-debian12)
-- Debian 13: [proxmox-backup-client_arm64-debian13](./proxmox-backup-client_arm64-debian13)
-- Ubuntu 20.04: [proxmox-backup-client_arm64-ubuntu20](./proxmox-backup-client_arm64-ubuntu20)
-- Ubuntu 22.04: [proxmox-backup-client_arm64-ubuntu22](./proxmox-backup-client_arm64-ubuntu22)
-- Ubuntu 24.04: [proxmox-backup-client_arm64-ubuntu24](./proxmox-backup-client_arm64-ubuntu24)
+- Debian 11: [proxmox-backup-client_arm64-debian11](https://github.com/junglivre/proxmox-backup-client-arm64/raw/master/proxmox-backup-client_arm64-debian11)
+- Debian 12: [proxmox-backup-client_arm64-debian12](https://github.com/junglivre/proxmox-backup-client-arm64/raw/master/proxmox-backup-client_arm64-debian12)
+- Debian 13: [proxmox-backup-client_arm64-debian13](https://github.com/junglivre/proxmox-backup-client-arm64/raw/master/proxmox-backup-client_arm64-debian13)
+- Ubuntu 20.04: [proxmox-backup-client_arm64-ubuntu20](https://github.com/junglivre/proxmox-backup-client-arm64/raw/master/proxmox-backup-client_arm64-ubuntu20)
+- Ubuntu 22.04: [proxmox-backup-client_arm64-ubuntu22](https://github.com/junglivre/proxmox-backup-client-arm64/raw/master/proxmox-backup-client_arm64-ubuntu22)
+- Ubuntu 24.04: [proxmox-backup-client_arm64-ubuntu24](https://github.com/junglivre/proxmox-backup-client-arm64/raw/master/proxmox-backup-client_arm64-ubuntu24)
 
 ## Quick Install by Distro
 
@@ -100,7 +106,7 @@ ldd ./proxmox-backup-client_arm64-<variant>
 Run `ldd` on the binary and install missing libs.
 
 ```bash
-ldd ./proxmox-backup-client_arm64-debian13
+ldd ./proxmox-backup-client_arm64-<variant>
 ```
 
 ### `GLIBC_x.y not found`
@@ -128,14 +134,19 @@ Reference upstream project:
 
 - [tizbac/proxmoxbackupclient_go](https://github.com/tizbac/proxmoxbackupclient_go)
 
+Compiled files:
+
+- [/proxmoxbackupclient_go/](./proxmoxbackupclient_go/)
+
+
 Important context: upstream does not provide ready-to-use ARM64 binaries for Linux.  
 Because of that, this repo also includes manually compiled ARM64 Go client binaries.
 
 The Go client side is split into multiple executables (toolbox style), such as:
 
-- `directorybackup` for directory/stream backup flows
-- `machinebackup` for full-machine live backup workflows
-- `nbd` for restore/mount-related NBD workflows
+- [`directorybackup`](https://github.com/junglivre/proxmox-backup-client-arm64/raw/master/proxmoxbackupclient_go/directorybackup) for directory/stream backup flows
+- [`machinebackup`](https://github.com/junglivre/proxmox-backup-client-arm64/raw/master/proxmoxbackupclient_go/machinebackup) for full-machine live backup workflows
+- [`nbd`](https://github.com/junglivre/proxmox-backup-client-arm64/raw/master/proxmoxbackupclient_go/nbd) for restore/mount-related NBD workflows
 
 So the practical model is: easier cross-platform distribution, but separated tools depending on the workflow.
 
