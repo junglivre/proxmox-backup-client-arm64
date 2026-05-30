@@ -1,10 +1,17 @@
-# proxmox-backup-client-arm64
+﻿# proxmox-backup-client-arm64
+
+English | [Portugues brasileiro](./README.pt-BR.md)
 
 Little collection of `proxmox-backup-client` ARM64 binaries for different Linux distros.
 
-This repo exists because Linux portability is messy af: `glibc`, `openssl`, and `libfuse` versions can break a binary between distros, and because it's quite hard to find the single binary of the backup client for arm64. I myself needed it while trying to backup files from a UNAS Pro to my PBS, so I had to compile this bad boy for Debian 11 arm64.
+This repo exists because Linux portability is messy af: `glibc`, `openssl`, and `libfuse` versions can break a binary between distros, and because it's quite hard to find the single binary of the backup client for arm64. I myself needed it while trying to backup files from a Unifi UNAS Pro to my PBS, so I had to compile this bad boy for Debian 11 arm64.
 
 And you shall also get prebuilt variants per distro, with clear runtime deps. I chose the most popular ones that came to mind while thinking what distro most embedded systems/solutions use.
+
+## Also check out the Go client builds (ARM64 in this repo)
+
+This repo also includes ARM64 builds based on `proxmoxbackupclient_go`.
+Jump to [Go Client (ARM64 builds in this repo)](#go-client-arm64-builds-in-this-repo).
 
 ## Available Distros
 
@@ -115,8 +122,27 @@ Basically, native portability hell.
 `proxmox-backup-client` depends on system-level libs (`fuse`, `systemd`, `openssl`, `glibc` ABI behavior).
 A fully static, universal Linux build is not reliable here without heavy patching and trade-offs.
 
+## Go Client (ARM64 builds in this repo)
+
+Reference upstream project:
+
+- [tizbac/proxmoxbackupclient_go](https://github.com/tizbac/proxmoxbackupclient_go)
+
+Important context: upstream does not provide ready-to-use ARM64 binaries for Linux.  
+Because of that, this repo also includes manually compiled ARM64 Go client binaries.
+
+The Go client side is split into multiple executables (toolbox style), such as:
+
+- `directorybackup` for directory/stream backup flows
+- `machinebackup` for full-machine live backup workflows
+- `nbd` for restore/mount-related NBD workflows
+
+So the practical model is: easier cross-platform distribution, but separated tools depending on the workflow.
+
 
 ## Credits
 
 - [Proxmox Backup Server](https://git.proxmox.com/?p=proxmox-backup.git)
+- [tizbac/proxmoxbackupclient_go](https://github.com/tizbac/proxmoxbackupclient_go)
 - Community users testing ARM64 distro compatibility
+
