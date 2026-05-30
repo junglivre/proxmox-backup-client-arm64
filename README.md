@@ -6,14 +6,14 @@ This repo exists because Linux portability is messy af: `glibc`, `openssl`, and 
 
 And you shall also get prebuilt variants per distro, with clear runtime deps. I chose the most popular ones that came to mind while thinking what distro most embedded systems/solutions use.
 
-## Available Binaries
+## Available Distros
 
-- `proxmox-backup-client_arm64-debian11`
-- `proxmox-backup-client_arm64-debian12`
-- `proxmox-backup-client_arm64-debian13`
-- `proxmox-backup-client_arm64-ubuntu20`
-- `proxmox-backup-client_arm64-ubuntu22`
-- `proxmox-backup-client_arm64-ubuntu24`
+- Debian 11: [proxmox-backup-client_arm64-debian11](./proxmox-backup-client_arm64-debian11)
+- Debian 12: [proxmox-backup-client_arm64-debian12](./proxmox-backup-client_arm64-debian12)
+- Debian 13: [proxmox-backup-client_arm64-debian13](./proxmox-backup-client_arm64-debian13)
+- Ubuntu 20.04: [proxmox-backup-client_arm64-ubuntu20](./proxmox-backup-client_arm64-ubuntu20)
+- Ubuntu 22.04: [proxmox-backup-client_arm64-ubuntu22](./proxmox-backup-client_arm64-ubuntu22)
+- Ubuntu 24.04: [proxmox-backup-client_arm64-ubuntu24](./proxmox-backup-client_arm64-ubuntu24)
 
 ## Quick Install by Distro
 
