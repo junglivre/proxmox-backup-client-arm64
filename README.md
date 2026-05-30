@@ -1,6 +1,6 @@
 ﻿# proxmox-backup-client-arm64
 
-English | [Portugues brasileiro](./README.pt-BR.md)
+English | [Português Brasileiro](./README.pt-BR.md)
 
 Little collection of `proxmox-backup-client` ARM64 binaries for different Linux distros.
 
